@@ -16,7 +16,7 @@ func (Admin) TableName() string {
 	return "mall_admin"
 }
 
-func (m Admin) GetAdmins() (admin []Admin) {
+func GetAdmins() (admin []Admin) {
 	db.Debug().Preload("AdminLog", func(query *gorm.DB) *gorm.DB {
 		//Query the latest 2 operation logs of each user
 		return query.Order("id desc").Limit(2)
