@@ -9,6 +9,6 @@ import (
 
 func GetDemo(context *gin.Context) {
 	utilGin := util.Gin{Ctx: context}
-	rest := models.GetAdmin(49)
+	rest := models.GetAdmin(51)
 	utilGin.Response(status.SUCCESS, "success", rest)
 }
