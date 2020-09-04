@@ -3,12 +3,9 @@ package main
 import (
 	"fmt"
 	"github.com/gin-gonic/gin"
-	"golangPro/golang-mallapi/app/models"
-	"golangPro/golang-mallapi/pkg/gredis"
-	"golangPro/golang-mallapi/pkg/logging"
-	"golangPro/golang-mallapi/pkg/setting"
-	"golangPro/golang-mallapi/pkg/util"
-	"golangPro/golang-mallapi/routers"
+	"golangPro/go-mallapi/app/models"
+	"golangPro/go-mallapi/pkg/setting"
+	"golangPro/go-mallapi/routers"
 	"log"
 	"net/http"
 )
@@ -16,9 +13,6 @@ import (
 func init() {
 	setting.Setup()
 	models.Setup()
-	logging.Setup()
-	gredis.Setup()
-	util.Setup()
 }
 
 func main() {

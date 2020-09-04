@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"github.com/jinzhu/gorm"
 	_ "github.com/jinzhu/gorm/dialects/mysql"
-	"golangPro/golang-mallapi/pkg/setting"
+	"golangPro/go-mallapi/pkg/setting"
 	"log"
 	"time"
 )
@@ -24,7 +24,7 @@ func Setup() {
 
 	//这里考虑到数据库密码有特殊字符#，在ini读取时可能会被替换掉，所以这里进行拼接
 
-	dns := fmt.Sprintf("%s:%s#@tcp(%s)/%s?charset=utf8&parseTime=True&loc=Local",
+	dns := fmt.Sprintf("%s:%s@tcp(%s)/%s?charset=utf8&parseTime=True&loc=Local",
 		setting.DatabaseSetting.User,
 		setting.DatabaseSetting.Password,
 		setting.DatabaseSetting.Host,
