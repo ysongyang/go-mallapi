@@ -33,6 +33,6 @@ func GetAdmin(adminId int) Admin {
 			return query.Order("id desc")
 		}).
 		Where("id = ?", adminId).
-		Find(&admin)
+		First(&admin)
 	return admin
 }
